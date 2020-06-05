@@ -1,4 +1,5 @@
 from pprint import pprint as pp
+from fileReport import createFile
 
 dec = lambda: '=' * 32
 
@@ -128,6 +129,10 @@ def main():
         pass
     
     obj1.display()
+    print(dec())
+    fileReport = input('do you want to print the list to a txt file: [Y/n]')
+    if fileReport.upper() == 'Y':
+        createFile(obj1._seating[1:], alt_cls, num_row)
 
 
 
