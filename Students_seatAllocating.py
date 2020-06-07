@@ -116,7 +116,7 @@ def main():
         for i in range(1, total_count+1):
             sn = input(f'Enter the seat number of student {i}: ').upper()
             #1A
-            name = input(f'Enter the name Student {i}: ')
+            name = input(f'Enter the name Student {i}: ').upper()
             obj1.allocate_students(sn, name)
     else: 
         pass
