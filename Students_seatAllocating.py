@@ -3,7 +3,7 @@ from fileReport import createFile, createCsv
 
 dec = lambda: '=' * 32
 
-'''student exam seat declaration'''
+'''student exam seat assigning'''
 
 class Student:
 
@@ -11,15 +11,8 @@ class Student:
     def __init__(self, schl_code, examclass):
 
         if not schl_code[:2].isalpha():
-
             raise ValueError(f'{dec()} ITS AN NONEXISTING NUMBER {dec()}')
-
-        if not schl_code[:2].isupper():
-
-            raise ValueError(f'{dec()} ITS AN INVALID STUDENT CODE {dec()}')
-
-        if not schl_code[2:].isdigit():
-            
+        if not schl_code[2:].isdigit():  
             raise ValueError(f'{dec()} INVALID ALLOCATED ROLL NUMBER {dec()}')
 
 
@@ -121,7 +114,7 @@ def main():
     if altS.lower() == 'y' :
 
         for i in range(1, total_count+1):
-            sn = input(f'Enter the seat number of student {i}: ')
+            sn = input(f'Enter the seat number of student {i}: ').upper()
             #1A
             name = input(f'Enter the name Student {i}: ')
             obj1.allocate_students(sn, name)
@@ -136,8 +129,9 @@ def main():
     fileCsv = input('do you want to make csv file: [Y/n] ')
     if fileCsv.upper() == 'Y':
         createCsv(obj1._seating[1:], alt_cls, num_seats)
-    
+    print()
     print('Thank You...')
+    print()
 
 
 
